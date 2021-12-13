@@ -121,7 +121,12 @@ func (p plot) print() {
 	for _, d := range p.dots {
 		m.data[d.y][d.x] = 1
 	}
-	m.print()
+	m.printTr(func(d int) string {
+		if d == 0 {
+			return " "
+		}
+		return "#"
+	})
 }
 
 // dot is a single dot with coordinates

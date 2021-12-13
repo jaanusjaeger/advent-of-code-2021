@@ -33,3 +33,12 @@ func (m *matrix) print() {
 		fmt.Println()
 	}
 }
+
+func (m *matrix) printTr(stringer func(d int) string) {
+	for _, row := range m.data {
+		for _, d := range row {
+			fmt.Print(stringer(d), " ")
+		}
+		fmt.Println()
+	}
+}
