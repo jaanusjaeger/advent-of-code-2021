@@ -6,9 +6,6 @@ import (
 	"strings"
 )
 
-var openers string = "([{<"
-var closers map[rune]rune
-
 func main() {
 	file := openFileFromArgs()
 	defer file.Close()
