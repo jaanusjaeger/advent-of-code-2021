@@ -2,9 +2,11 @@
 
 https://adventofcode.com/2021
 
-Each day is in a separate subdirectory.
+Solution template is in the `template/` directory and contains the most up to date solution structure and superset of all helper files (`functions.g`, `matrix.go`, etc).
 
-Subdirectory layout:
+Solution for each day is in a separate subdirectory. This may contain subset or modified versions of the helper files.
+
+Directory layout:
 
     ├── Makefile           # The makefile
     ├── example-input      # Test input from the puzzle text
