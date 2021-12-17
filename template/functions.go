@@ -56,6 +56,26 @@ func intFromBinaryString(s string) int {
 	}
 }
 
+func hexStringToBits(in string) []byte {
+	bitSize := 4
+	data := make([]byte, len(in)*bitSize)
+	for i, c := range in {
+		d, err := strconv.ParseUint(string(c), 16, bitSize)
+		if err != nil {
+			log.Fatalf("invalid input ")
+		}
+		// fmt.Printf("%s == %04b\n", string(c), d)
+		for j := 0; j < bitSize; j++ {
+			b := byte(d) & 0x1
+			// fmt.Println(d&0x1, "   ?=", b)
+			data[i*bitSize+3-j] = b
+			d = d >> 1
+		}
+	}
+
+	return data
+}
+
 func min(x, y int) int {
 	if x < y {
 		return x
